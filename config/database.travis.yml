@@ -1,15 +1,3 @@
-language: ruby
-cache: bundler
-before_install:
-  - yes | gem update --system --force
-  - gem install bundler
-rvm:
-  - 2.5.1
-services:
-  - postgresql
-before_script:
-  - cp config/database.travis.yml config/database.yml
-  - psql -c 'create database portfolio_test;' -U postgres
-script:
-  - bin/rake db:migrate RAILS_ENV=test
-  - bin/rake
+test:
+  adapter: postgresql
+  database: portfolio_test
