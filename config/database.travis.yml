@@ -1,7 +1,8 @@
 language: ruby
 cache: bundler
+dist: trusty
 rvm:
-  - 2.5.0
+  - 2.5.1
 services:
   - postgresql
 before_script:
